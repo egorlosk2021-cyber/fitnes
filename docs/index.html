@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Продажи в фитнес-обучении</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #222222;
+      --accent: #2aa9ff;
+      --card-bg: #f3f3f3;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --accent: #00ffff;
+      --card-bg: #1f1f1f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--card-bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 10px;
+      padding: 6px 12px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .theme-toggle:hover {
+      opacity: 0.8;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    section:nth-child(odd) {
+      background: var(--bg);
+    }
+
+    section:nth-child(even) {
+      background: var(--card-bg);
+    }
+
+    h2 {
+      color: var(--accent);
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    p {
+      max-width: 700px;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    img {
+      margin-top: 20px;
+      max-width: 80%;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    nav {
+      margin-top: 30px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Фитнес-продажи</h1>
+    <button class="theme-toggle" id="themeBtn">🌞 Светлая</button>
+  </header>
+
+  <section id="page1">
+    <h2>Что такое продажа фитнес-бизнеса?</h2>
+    <p>
+      Продажа фитнес-бизнеса — это не просто обмен товара на деньги. Это искусство донести до клиента ценность здорового образа жизни, 
+      показать, что покупка тренировки — это инвестиция в себя. Настоящие продажи начинаются тогда, когда клиент чувствует, 
+      что вы решаете его боль и помогаете достичь цели, будь то похудение, набор массы или улучшение самочувствия.
+    </p>
+    <img src="https://images.unsplash.com/photo-1579758629934-09554e34d09e?auto=format&fit=crop&w=800&q=80" alt="Фитнес-зал">
+    <nav>
+      <a href="#page2">Вперёд →</a>
+    </nav>
+  </section>
+
+  <section id="page2">
+    <h2>Как продавать эффективно?</h2>
+    <p>
+      1️⃣ Изучи клиента — пойми, что им движет.<br>
+      2️⃣ Продавай результат, а не абонемент. Люди покупают эмоции и уверенность в себе.<br>
+      3️⃣ Создавай доверие — будь экспертом, не продавцом.<br>
+      4️⃣ Всегда предлагай следующий шаг: консультация, пробная тренировка, онлайн-курс.<br><br>
+      Когда продажи строятся на реальной пользе и человеческом подходе — бизнес растёт сам собой.
+    </p>
+    <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=800&q=80" alt="Персональный тренер">
+    <nav>
+      <a href="#page1">← Назад</a>
+    </nav>
+  </section>
+
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      themeBtn.textContent = document.body.classList.contains('dark') ? '🌙 Тёмная' : '🌞 Светлая';
+    });
+  </script>
+</body>
+</html>
